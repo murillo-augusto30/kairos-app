@@ -14,56 +14,56 @@
 
 ```text
 kairos-app/
-├── src/                          # Código fonte principal
-│   ├── frontend/                 # Aplicação Angular
-│   │   ├── src/app/
-│   │   │   ├── core/             # Serviços essenciais, interceptors
-│   │   │   ├── modules/          # Módulos funcionais (PDI, objetivos, etc.)
-│   │   │   ├── shared/           # Componentes/diretivas/pipes reutilizáveis
-│   │   │   └── layouts/          # Layouts da aplicação
+├── 📁 src/                          # Código fonte principal
+│   ├── 📁 frontend/                 # Aplicação Angular
+│   │   ├── 📁 src/app/
+│   │   │   ├── 📁 core/             # Serviços essenciais, interceptors
+│   │   │   ├── 📁 modules/          # Módulos funcionais (PDI, objetivos, etc.)
+│   │   │   ├── 📁 shared/           # Componentes/diretivas/pipes reutilizáveis
+│   │   │   └── 📁 layouts/          # Layouts da aplicação
 │   │   ├── angular.json
 │   │   ├── package.json
 │   │   └── Dockerfile
 │   │
-│   └── backend/                  # API .NET
-│       ├── src/
-│       │   ├── Kairos.API/          # Controllers
-│       │   ├── Kairos.Application/  # Casos de uso, DTOs, interfaces
-│       │   ├── Kairos.Domain/       # Entidades e regras de negócio
-│       │   └── Kairos.Infrastructure/ # EF Core, repositórios, externos
+│   └── 📁 backend/                  # API .NET
+│       ├── 📁 src/
+│       │   ├── 📁 Kairos.API/         # Controllers, Filters, Middlewares
+│       │   ├── 📁 Kairos.Application/ # Application Services, DTOs, Mappers
+│       │   ├── 📁 Kairos.Domain/      # Entities, Value Objects, Domain Services, Repository Interfaces
+│       │   └── 📁 Kairos.Infrastructure/ # EF Core, Repositories, Email, Storage
 │       ├── Kairos.sln
 │       └── Dockerfile
 │
-├── docker/                       # Configurações Docker
-│   ├── docker-compose.yml
-│   ├── docker-compose.dev.yml
-│   ├── docker-compose.prod.yml
-│   ├── mysql/
-│   │   ├── init.sql
-│   │   └── my.cnf
-│   └── nginx/
-│       ├── nginx.conf
-│       ├── default.conf
-│       └── ssl/
+├── 📁 docker/                       # Configurações Docker
+│   ├── docker-compose.yml           # Compose principal
+│   ├── docker-compose.dev.yml       # Configurações desenvolvimento
+│   ├── docker-compose.prod.yml      # Configurações produção
+│   ├── 📁 mysql/                    # Configurações MySQL
+│   │   ├── init.sql                 # Script inicialização BD
+│   │   └── my.cnf                   # Configurações personalizadas
+│   └── 📁 nginx/                    # Configurações Nginx
+│       ├── nginx.conf               # Config principal
+│       ├── default.conf             # Config virtual host
+│       └── ssl/                     # Certificados SSL (produção)
 │
-├── docs/                         # Documentação
-│   ├── architecture/
-│   ├── api/
-│   └── database/
+├── 📁 docs/                         # Documentação
+│   ├── 📁 architecture/             # Diagramas de arquitetura
+│   ├── 📁 api/                      # Documentação API (Swagger/OpenAPI)
+│   └── 📁 database/                 # Modelos ER, migrations
 │
-├── scripts/
-│   ├── init-db.sh
-│   ├── seed-data.sh
-│   └── deploy-local.sh
+├── 📁 scripts/                      # Scripts utilitários
+│   ├── init-db.sh                   # Inicialização banco de dados
+│   ├── seed-data.sh                 # Dados iniciais
+│   └── deploy-local.sh              # Deploy local
 │
-├── .github/
-│   └── workflows/
+├── 📁 .github/                      # Configurações GitHub
+│   └── 📁 workflows/                # CI/CD pipelines
 │
-├── .env.example
+├── .env.example                     # Variáveis de ambiente exemplo
 ├── .gitignore
-├── docker-compose.yml
-├── Makefile
-└── README.md
+├── docker-compose.yml               # Link simbólico para docker/docker-compose.yml
+├── Makefile                         # Comandos úteis
+└── README.md                        # Este arquivo
 ```
 
 ## 🚀 Como Executar o Projeto
