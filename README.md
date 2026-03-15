@@ -41,8 +41,8 @@ docker-compose up -d
 
 Para mais detalhes sobre o projeto:
 
-- [Product Requirements Document (PRD)](docs/PRD.md)
-- [Architectural Decision Records (ADR)](docs/ADR.md)
+- [Product Requirements Document (PRD)](docs/product-requirements.md)
+- [Architectural Decision Records (ADR)](docs/architectural-decision-records.md)
 
 ## Contribuição
 

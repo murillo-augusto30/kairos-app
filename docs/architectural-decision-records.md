@@ -95,26 +95,7 @@ Angular 15+ com Bootstrap 5 para componentes UI.
 - Curva de aprendizado para Angular
 - Benefícios: manutenção e escalabilidade
 
-## ADR 006: CI/CD com GitHub Actions
-
-### Contexto
-Automação de build, teste e deploy para qualidade consistente.
-
-### Decisão
-Implementar pipelines com GitHub Actions.
-
-### Razões
-- Integração nativa com GitHub
-- Suporte a Docker builds
-- Fácil configuração via YAML
-- Gratuito para repositórios públicos
-
-### Consequências
-- Dependência de GitHub
-- Configuração inicial necessária
-- Benefícios: automação e feedback rápido
-
-## ADR 007: Documentação Estruturada
+## ADR 006: Documentação Estruturada
 
 ### Contexto
 Projeto complexo necessita documentação clara e acessível.
