@@ -112,3 +112,80 @@ Separar documentação em PRD (requisitos) e ADR (decisões arquiteturais), mant
 - Documentação distribuída em múltiplos arquivos
 - Necessidade de manter consistência
 - Benefícios: clareza e organização
+
+## ADR 007: Estrutura do Projeto
+
+### Contexto
+Organização clara e padronizada do código fonte para facilitar desenvolvimento, manutenção e escalabilidade do projeto Kairos.
+
+### Decisão
+Adotar a estrutura de pastas descrita abaixo, seguindo convenções de projetos Angular e .NET, com separação clara de responsabilidades.
+
+### Estrutura do Projeto
+
+```text
+kairos-app/
+├── 📁 src/                          # Código fonte principal
+│   ├── 📁 frontend/                 # Aplicação Angular
+│   │   ├── 📁 src/app/
+│   │   │   ├── 📁 core/             # Serviços essenciais, interceptors
+│   │   │   ├── 📁 modules/          # Módulos funcionais (PDI, objetivos, etc.)
+│   │   │   ├── 📁 shared/           # Componentes/diretivas/pipes reutilizáveis
+│   │   │   └── 📁 layouts/          # Layouts da aplicação
+│   │   ├── angular.json
+│   │   ├── package.json
+│   │   └── Dockerfile
+│   │
+│   └── 📁 backend/                  # API .NET
+│       ├── 📁 src/
+│       │   ├── 📁 Kairos.API/         # Controllers, Filters, Middlewares
+│       │   ├── 📁 Kairos.Application/ # Application Services, DTOs, Mappers
+│       │   ├── 📁 Kairos.Domain/      # Entities, Value Objects, Domain Services, Repository Interfaces
+│       │   └── 📁 Kairos.Infrastructure/ # EF Core, Repositories, Email, Storage
+│       ├── Kairos.sln
+│       └── Dockerfile
+│
+├── 📁 docker/                       # Configurações Docker
+│   ├── docker-compose.yml           # Compose principal
+│   ├── docker-compose.dev.yml       # Configurações desenvolvimento
+│   ├── docker-compose.prod.yml      # Configurações produção
+│   ├── 📁 mysql/                    # Configurações MySQL
+│   │   ├── init.sql                 # Script inicialização BD
+│   │   └── my.cnf                   # Configurações personalizadas
+│   └── 📁 nginx/                    # Configurações Nginx
+│       ├── nginx.conf               # Config principal
+│       ├── default.conf             # Config virtual host
+│       └── ssl/                     # Certificados SSL (produção)
+│
+├── 📁 docs/                         # Documentação
+│   ├── 📁 architecture/             # Diagramas de arquitetura
+│   ├── 📁 api/                      # Documentação API (Swagger/OpenAPI)
+│   └── 📁 database/                 # Modelos ER, migrations
+│
+├── 📁 scripts/                      # Scripts utilitários
+│   ├── init-db.sh                   # Inicialização banco de dados
+│   ├── seed-data.sh                 # Dados iniciais
+│   └── deploy-local.sh              # Deploy local
+│
+├── 📁 .github/                      # Configurações GitHub
+│   └── 📁 workflows/                # CI/CD pipelines
+│
+├── .env.example                     # Variáveis de ambiente exemplo
+├── .gitignore
+├── docker-compose.yml               # Link simbólico para docker/docker-compose.yml
+├── Makefile                         # Comandos úteis
+└── README.md                        # Este arquivo
+```
+
+### Razões
+- **Separação clara:** Frontend e backend isolados em pastas distintas
+- **Convenções estabelecidas:** Segue padrões do Angular (core/shared/modules) e .NET (camadas Domain/Application/Infrastructure)
+- **Containerização:** Configurações Docker organizadas por serviço
+- **Documentação estruturada:** Pastas específicas para diferentes tipos de docs
+- **Scripts utilitários:** Centralização de automações em uma pasta dedicada
+
+### Consequências
+- Facilita navegação e localização de arquivos
+- Padronização para novos desenvolvedores
+- Suporte à escalabilidade do projeto
+- Manutenção mais eficiente do código
